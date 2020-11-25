@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<style>
+			body {
+				text-align:center;
+			}
+			
+			#logo {
+				width:300px;
+				border:3px solid black;
+				border-radius:150px;
+			}
+			
+			#heyButton {
+				width:200px;
+				height:50px;
+				background-color:white;
+				border:3px solid black;
+				border-radius:15px;
+				font-size:30px;
+				cursor:pointer;
+			}
+		</style>
+		<script>
+			var p = false;
+			function hey() {
+				if(!p) {
+					p = true;
+					document.getElementById("heyButton").innerHTML = "hey!";
+					var r = Math.floor(Math.random()*24)+1;
+					var prefix = ""
+					if(r < 10) {
+						prefix = "0"
+					}
+					var heyAudio = new Audio('sounds/hey-'+prefix+r+'.mp3');
+					heyAudio.play();
+					heyAudio.onended = function() {
+						document.getElementById("heyButton").innerHTML = "hey";
+						p = false;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img id="logo" src="hey.png" />
+		<br><br>
+		<button id="heyButton" onclick="hey()">hey</button>
+		<br><p>clips taken from the <a href="https://www.relay.fm/connected">connected</a> podcast</p>
+		<p>made by <a href="https://www.twitter.com/jwhamilton_">@jwhamilton_</a></p>
+	</body>
+</html>
