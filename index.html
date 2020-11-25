@@ -27,12 +27,16 @@
 				if(!p) {
 					p = true;
 					document.getElementById("heyButton").innerHTML = "hey!";
-					var r = Math.floor(Math.random()*24)+1;
-					var prefix = ""
-					if(r < 10) {
-						prefix = "0"
+					var r = Math.floor(Math.random()*48)+1;
+					
+					filename = ""
+					
+					if(r == 48) {
+						filename = 'sounds/bighey.mp3';
+					} else {
+						filename = 'sounds/hey '+r+'.mp3';
 					}
-					var heyAudio = new Audio('sounds/hey-'+prefix+r+'.mp3');
+					var heyAudio = new Audio(filename);
 					heyAudio.play();
 					heyAudio.onended = function() {
 						document.getElementById("heyButton").innerHTML = "hey";
@@ -43,6 +47,7 @@
 		</script>
 	</head>
 	<body>
+		<br><br>
 		<img id="logo" src="hey.png" />
 		<br><br>
 		<button id="heyButton" onclick="hey()">hey</button>
