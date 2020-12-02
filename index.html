@@ -30,13 +30,8 @@
 					document.getElementById("heyButton").innerHTML = "hey!";
 					var r = Math.floor(Math.random()*48)+1;
 					
-					filename = ""
+					filename = 'sounds/hey '+r+'.mp3';
 					
-					if(r == 48) {
-						filename = 'sounds/bighey.mp3';
-					} else {
-						filename = 'sounds/hey '+r+'.mp3';
-					}
 					var heyAudio = new Audio(filename);
 					heyAudio.play();
 					heyAudio.onended = function() {
