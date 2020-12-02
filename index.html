@@ -27,8 +27,13 @@
 			function hey() {
 				if(!p) {
 					p = true;
-					document.getElementById("heyButton").innerHTML = "hey!";
 					var r = Math.floor(Math.random()*48)+1;
+					
+					if(r == 48) {
+						document.getElementById("heyButton").innerHTML = "HEY!";
+					} else {
+						document.getElementById("heyButton").innerHTML = "hey!";
+					}
 					
 					filename = 'sounds/hey '+r+'.mp3';
 					
